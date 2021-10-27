@@ -1,5 +1,6 @@
 O projeto do Wishlist é um aplicativo criado para exibir uma lista com os desejos/sonhos do usuário que gostaria que fossem concretizados.
 
+Como foi realizado:
 -BD (Banco de dados) realizado no Microsoft Sql Server Management Studio (SSMS).
 
 -Back-end: API que utiliza as manipulações do BD.
