@@ -37,9 +37,9 @@ namespace WishList.webApi.Contexts
             modelBuilder.Entity<Desejo>(entity =>
             {
                 entity.HasKey(e => e.IdDesejo)
-                    .HasName("PK__Desejos__5DB1341FAE3471C0");
+                    .HasName("PK__Desejos__5DB1341F3746F664");
 
-                entity.HasIndex(e => e.Descricao, "UQ__Desejos__91D38C28F03164AB")
+                entity.HasIndex(e => e.Descricao, "UQ__Desejos__91D38C281BF86B5C")
                     .IsUnique();
 
                 entity.Property(e => e.IdDesejo)
@@ -51,16 +51,23 @@ namespace WishList.webApi.Contexts
                     .HasMaxLength(256)
                     .IsUnicode(false)
                     .HasColumnName("descricao");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.Desejos)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK__Desejos__idUsuar__3A81B327");
             });
 
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__645723A612192691");
+                    .HasName("PK__Usuario__645723A64AEE27A8");
 
                 entity.ToTable("Usuario");
 
-                entity.HasIndex(e => e.Email, "UQ__Usuario__AB6E6164710D8E5D")
+                entity.HasIndex(e => e.Email, "UQ__Usuario__AB6E6164ADB4230F")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario)
@@ -72,6 +79,11 @@ namespace WishList.webApi.Contexts
                     .HasMaxLength(256)
                     .IsUnicode(false)
                     .HasColumnName("email");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Senha)
                     .IsRequired()

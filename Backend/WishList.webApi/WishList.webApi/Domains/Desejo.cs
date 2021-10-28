@@ -8,7 +8,9 @@ namespace WishList.webApi.Domains
     public partial class Desejo
     {
         public byte IdDesejo { get; set; }
+        public byte? IdUsuario { get; set; }
         public string Descricao { get; set; }
-        public object IdUsuarioNavigation { get; internal set; }
+
+        public virtual Usuario IdUsuarioNavigation { get; set; }
     }
 }

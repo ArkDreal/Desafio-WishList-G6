@@ -1,10 +1,10 @@
 USE WishList
 GO
 
-INSERT INTO Usuario (email, senha)
-VALUES ('gubarros@email.com', 'gubarros123'),('arkdreal@email.com', 'arkdreal17'), ('raulfiorin@email.com','raul123'),('jhozapaza@email.com', 'jhon123');
+INSERT INTO Usuario (Nome, email, senha)
+VALUES ('Gustavo B.', 'gubarros@email.com', 'gubarros123'),('Andrey O.', 'arkdreal@email.com', 'arkdreal17'), ('Raul F.', 'raulfiorin@email.com','raul123'),('Jhon A.', 'jhozapaza@email.com', 'jhon123');
 GO
 
-INSERT INTO Desejos(descricao)
-VALUES ('Playstation 5'), ('conhecer a Noruega'), ('comprar uma fiorino'), ('jogar futebol com o Neymar');
+INSERT INTO Desejos(idUsuario, descricao)
+VALUES ('1', 'Playstation 5'), ('2', 'conhecer a Noruega'), ('3', 'comprar uma fiorino'), ('4', 'jogar futebol com o Neymar');
 go

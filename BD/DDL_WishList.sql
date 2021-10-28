@@ -6,6 +6,7 @@ GO
 
 CREATE TABLE Usuario (
 idUsuario TINYINT PRIMARY KEY IDENTITY (1,1),
+Nome VARCHAR(30) NOT NULL,
 email VARCHAR (256) NOT NULL unique,
 senha VARCHAR (50) NOT NULL
 );
@@ -13,6 +14,10 @@ GO
 
 CREATE TABLE Desejos (
 idDesejo TINYINT PRIMARY KEY IDENTITY (1,1),
-descricao VARCHAR (256) NOT NULL unique,
+idUsuario TINYINT FOREIGN KEY REFERENCES Usuario(idUsuario),
+descricao VARCHAR (256) NOT NULL ,
 );
+GO
+
+DROP DATABASE WishList
 GO

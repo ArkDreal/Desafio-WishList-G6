@@ -70,3 +70,5 @@ C:\Users\43407488890\Desktop\Desafio-WishList-G6\Backend\WishList.webApi\WishLis
 C:\Users\43407488890\Desktop\Desafio-WishList-G6\Backend\WishList.webApi\WishList.webApi\obj\Debug\net5.0\ref\WishList.webApi.dll
 C:\Users\43407488890\Desktop\Desafio-WishList-G6\Backend\WishList.webApi\WishList.webApi\obj\Debug\net5.0\WishList.webApi.pdb
 C:\Users\43407488890\Desktop\Desafio-WishList-G6\Backend\WishList.webApi\WishList.webApi\obj\Debug\net5.0\WishList.webApi.genruntimeconfig.cache
+C:\Users\43407488890\Desktop\Desafio-WishList-G6\Backend\WishList.webApi\WishList.webApi\bin\Debug\net5.0\WishList.webApi.xml
+C:\Users\43407488890\Desktop\Desafio-WishList-G6\Backend\WishList.webApi\WishList.webApi\obj\Debug\net5.0\WishList.webApi.xml
