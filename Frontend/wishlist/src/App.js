@@ -16,7 +16,7 @@ componentDidMount() {
 
 
 
-cadastrarTipoDesejo = (event) => {
+cadastrarDesejo = (event) => {
   // Ignora o comportamento padrão do navegador
   event.preventDefault();
 
@@ -26,31 +26,32 @@ cadastrarTipoDesejo = (event) => {
       // http://localhost:5000/api/tiposeventos/4
       fetch('http://localhost:5000/api/Desejo', {
           method : 'POST',
-          body : JSON.stringify({ descricao : this.state.titulo, idUsuario: 1 }),
+          body : JSON.stringify({ descricao : this.state.titulo, idUsuario: 2 }),
           headers : {
               "Content-type" : "application/json"
           }
       })
 
-      .then(resposta => {
-          if (resposta.status === 204) {
-              console.log(
-                  'O Tipo de Evento ' + this.state.idTipoEventoAlterado + ' foi atualizado!',
-                  'Seu novo título agora é :' + this.state.titulo
-              )
-          }
-      })
+      .then(resposta => resposta)
 
       // caso ocorra algum erro, mostra no console do navegador
       .catch(erro => console.log(erro))
 
       .then(console.log("Desejo cadastrado."))
 
-      
-  
+      .then(this.buscarTiposEventos)
 
-        
-}
+      .then(this.limparCampos)        
+    }
+
+    limparCampos = () => {
+        this.setState({
+            titulo : '',
+            idTipoEventoAlterado : 0
+        })        
+        console.log('Os states foram resetados!')
+    }
+
   
 
     atualizaStateDesejo = async (desejo) => {
@@ -87,9 +88,11 @@ cadastrarTipoDesejo = (event) => {
                                     {
                                         this.state.listaDesejos.map((Desejos => {
                                             console.log(Desejos)
+                                          
                                           return (
                                                 <tr key={Desejos.idDesejo}>
-                                                    <td>{Desejos.idUsuarioNavigation.Nome}</td>
+                                                    <td>{Desejos.idDesejo}</td>     
+                                                    <td>{Desejos.idUsuarioNavigation.nome}</td>
                                                     <td>{Desejos.descricao}</td>                                       
                                                 </tr>
                                             )
@@ -101,7 +104,7 @@ cadastrarTipoDesejo = (event) => {
                     
                     <section>
                         <h2>Cadastre um desejo</h2>
-                        <form onSubmit = {this.cadastrarTipoDesejo}>
+                        <form onSubmit = {this.cadastrarDesejo}>
                             <div>
                                 <input type = "text"
                                 value = {this.titulo}
